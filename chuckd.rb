@@ -14,11 +14,8 @@ class Chuckd < Formula
   depends_on GraalVMRequirement
 
   def install
-    system "gu", "install", "native-image"
     system "gradle", "nativeImage"
-
     bin.install "app/build/bin/chuckd"
-
     testpath.install "bat-tests"
   end
 
