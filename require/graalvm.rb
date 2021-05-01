@@ -9,8 +9,8 @@ class GraalVMRequirement < Requirement
 
   def self.graalvm_installed?
     @@graal_root = `echo $(find /Library/Java/JavaVirtualMachines -name "graalvm-ce-java*")`
-      .split(/\n+|\r+/)
-      .reject(&:empty?)[0]
+                   .split(/\n+|\r+/)
+                   .reject(&:empty?)[0]
     ohai "Found GraalVM installation: #{@@graal_root}"
     File.exist?("#{@@graal_root}/Contents/Home/bin/native-image")
   end

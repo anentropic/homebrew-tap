@@ -10,17 +10,14 @@ class Chuckd < Formula
 
   depends_on "gradle" => :build
   depends_on xcode: :build
-  depends_on "bats-core" => :test
   depends_on GraalVMRequirement
 
   def install
     system "gradle", "nativeImage"
     bin.install "app/build/bin/chuckd"
-    testpath.install "bat-tests"
   end
 
   test do
     system bin/"chuckd", "--version"
-    system "bats", "bat-tests/smoke.bats"
   end
 end
