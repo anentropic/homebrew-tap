@@ -9,11 +9,9 @@ class Chuckd < Formula
   license "Apache-2.0"
 
   depends_on "gradle" => :build
-  # (does not work, see https://github.com/Homebrew/discussions/discussions/1075)
-  # depends_on :"graalvm/tap/graalvm-ce-java11" => [graal_version, :build]
-  depends_on GraalVMRequirement
-
+  depends_on xcode: :build
   depends_on "bats-core" => :test
+  depends_on GraalVMRequirement
 
   def install
     system "gu", "install", "native-image"
