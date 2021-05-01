@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Style/ClassVars
 class GraalVMRequirement < Requirement
   fatal true
 
@@ -29,3 +30,4 @@ class GraalVMRequirement < Requirement
     "(Please install the java11 version, that's what chuckd is developed against)."
   end
 end
+# rubocop:enable Style/ClassVars
