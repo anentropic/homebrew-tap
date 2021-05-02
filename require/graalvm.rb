@@ -9,17 +9,30 @@ class GraalVMRequirement < Requirement
   @@graal_root = nil
 
   def self.graalvm_installed?
-    @@graal_root = `echo $(find /Library/Java/JavaVirtualMachines -name "graalvm-ce-java*")`
-                   .split(/\n+|\r+/)
-                   .reject(&:empty?)[0]
-    ohai "Found GraalVM installation: #{@@graal_root}"
-    File.exist?("#{@@graal_root}/Contents/Home/bin/native-image")
+    if ENV['HOMEBREW_GRAALVM_HOME'] then
+      # for GitHub Actions:
+      return File.exist?("#{ENV['HOMEBREW_GRAALVM_HOME']}/bin/native-image")
+    else
+      # for local install:
+      @@graal_root = `echo $(find /Library/Java/JavaVirtualMachines -name "graalvm-ce-java*")`
+                     .split(/\n+|\r+/)
+                     .reject(&:empty?)[0]
+      ohai "Found GraalVM installation: #{@@graal_root}"
+      File.exist?("#{@@graal_root}/Contents/Home/bin/native-image")
+    end
   end
 
   env do
-    ohai @@graal_root.to_s
-    ENV.append_path "PATH", "#{@@graal_root}/Contents/Home/bin"
-    ENV["JAVA_HOME"] = "#{@@graal_root}/Contents/Home"
+    if ENV['HOMEBREW_GRAALVM_HOME'] then
+      # for GitHub Actions:
+      ENV.append_path "PATH", "#{ENV['HOMEBREW_GRAALVM_HOME']}/bin"
+      ENV["JAVA_HOME"] = ENV['HOMEBREW_GRAALVM_HOME']
+    else
+      # for local install:
+      ohai @@graal_root.to_s
+      ENV.append_path "PATH", "#{@@graal_root}/Contents/Home/bin"
+      ENV["JAVA_HOME"] = "#{@@graal_root}/Contents/Home"
+    end
   end
 
   def message
