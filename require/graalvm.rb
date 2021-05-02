@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # rubocop:disable Style/ClassVars
+# rubocop:disable Style/StringLiteralsInInterpolation
 class GraalVMRequirement < Requirement
   fatal true
 
@@ -9,9 +10,9 @@ class GraalVMRequirement < Requirement
   @@graal_root = nil
 
   def self.graalvm_installed?
-    if ENV['HOMEBREW_GRAALVM_HOME'] then
+    if ENV["HOMEBREW_GRAALVM_HOME"]
       # for GitHub Actions:
-      return File.exist?("#{ENV['HOMEBREW_GRAALVM_HOME']}/bin/native-image")
+      File.exist?("#{ENV['HOMEBREW_GRAALVM_HOME']}/bin/native-image")
     else
       # for local install:
       @@graal_root = `echo $(find /Library/Java/JavaVirtualMachines -name "graalvm-ce-java*")`
@@ -23,10 +24,10 @@ class GraalVMRequirement < Requirement
   end
 
   env do
-    if ENV['HOMEBREW_GRAALVM_HOME'] then
+    if ENV["HOMEBREW_GRAALVM_HOME"]
       # for GitHub Actions:
       ENV.append_path "PATH", "#{ENV['HOMEBREW_GRAALVM_HOME']}/bin"
-      ENV["JAVA_HOME"] = ENV['HOMEBREW_GRAALVM_HOME']
+      ENV["JAVA_HOME"] = ENV["HOMEBREW_GRAALVM_HOME"]
     else
       # for local install:
       ohai @@graal_root.to_s
@@ -43,4 +44,5 @@ class GraalVMRequirement < Requirement
     "(Please install the java11 version, that's what chuckd is developed against)."
   end
 end
+# rubocop:enable Style/StringLiteralsInInterpolation
 # rubocop:enable Style/ClassVars
