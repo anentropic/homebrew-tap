@@ -5,14 +5,13 @@ class Chuckd < Formula
   homepage "https://github.com/anentropic/chuckd"
   license "Apache-2.0"
 
-  url "https://github.com/anentropic/chuckd.git", tag: "0.3.8", revision: "8bf166cc75d8980866473513142b716222e15fc2"
+  url "https://github.com/anentropic/chuckd.git", tag: "0.3.9", revision: "e0b0eea7ea590f68ddf522d65c6b29d199987284"
 
   bottle do
-    root_url "https://github.com/anentropic/chuckd/releases/download/0.3.8"
+    root_url "https://github.com/anentropic/chuckd/releases/download/0.3.9"
     
-    sha256 cellar: :any, catalina: "30fba23ff485e2b129b3c24a6d8633600f606a2f90d2f4ba01f58b04bea522f0"
+    sha256 cellar: :any, catalina: "69ebb1365e89bf511625e17fdcedd285d506fa53c70be4e3629f702f5f776e40"
   end
-
 
   depends_on "gradle" => :build
   depends_on xcode: :build
