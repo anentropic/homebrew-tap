@@ -3,12 +3,8 @@ require_relative "./require/graalvm"
 class Chuckd < Formula
   desc "Schema evolutions validator"
   homepage "https://github.com/anentropic/chuckd"
-  url "https://github.com/anentropic/chuckd.git", tag: "0.3.13", revision: "42c5abc15d276914d823e8eef9d7810d79697d83"
+  url "https://github.com/anentropic/chuckd.git", tag: "0.3.14", revision: "25fa980295c7c61698994b97dc223a6b926e9edd"
   license "Apache-2.0"
-
-
-  
-
 
   depends_on "gradle" => :build
   depends_on xcode: :build
