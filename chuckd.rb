@@ -3,13 +3,7 @@ require_relative "./require/graalvm"
 class Chuckd < Formula
   desc "Schema evolutions validator"
   homepage "https://github.com/anentropic/chuckd"
-  url "https://github.com/anentropic/chuckd.git", tag: "0.3.16", revision: "377970f7eca4fb721519999ea133bd5baa94c479"
-
-  bottle do
-    root_url "https://github.com/anentropic/chuckd/releases/download/0.3.16"
-
-    sha256 cellar: :any, catalina: "7dd756448bd86a7e950873396ceae5580deabe25a7cbfc09b36b7a87ce7c1027"
-  end
+  url "https://github.com/anentropic/chuckd.git", tag: "0.3.17", revision: "1b1deff89f24a53c4a932cedd7d234113398d29f"
 
   license "Apache-2.0"
 
