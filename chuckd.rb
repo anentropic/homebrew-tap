@@ -13,9 +13,9 @@ class Chuckd < Formula
     sha256 cellar: :any, catalina: "d4c76d961664bf6c24ae445b6f5516355dd4c1ffcff562a57767f50bdf19e3ae"
   end
 
+  depends_on GraalVMRequirement => :build
   depends_on "gradle" => :build
   depends_on xcode: :build
-  depends_on GraalVMRequirement
 
   def install
     system "gradle", "nativeImage"
