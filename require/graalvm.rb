@@ -41,7 +41,10 @@ class GraalVMRequirement < Requirement
     "Please run `brew install --cask graalvm/tap/graalvm-ce-java11` first.\n"\
     "See https://github.com/graalvm/homebrew-tap for more detailed instructions.\n"\
     "`gu install native-image` requires admin permissions, you will have to do it manually.\n"\
-    "(Please install the java11 version, that's what chuckd is developed against)."
+    "(Please install the java11 version, that's what chuckd is developed against).\n"\
+    "If you installed GraalVM to a location other than the suggested `/Library/Java/JavaVirtualMachines/`"\
+    " path then you will need to set HOMEBREW_GRAALVM_HOME=$JAVA_HOME env var in front of"\
+    " `brew install anentropic/tap/chuckd`."
   end
 end
 # rubocop:enable Style/StringLiteralsInInterpolation
