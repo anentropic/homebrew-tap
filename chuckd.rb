@@ -3,15 +3,9 @@ require_relative "./require/graalvm"
 class Chuckd < Formula
   desc "Schema evolutions validator"
   homepage "https://github.com/anentropic/chuckd"
-  url "https://github.com/anentropic/chuckd.git", tag: "0.4.1", revision: "d92278508c306b0975a5bfbc26f1323aac79472f"
+  url "https://github.com/anentropic/chuckd.git", tag: "0.5.0", revision: "71fdf9e53b077117a8ad65df71d3182ceb0500ae"
 
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://github.com/anentropic/chuckd/releases/download/0.4.1"
-
-    sha256 cellar: :any, catalina: "dbed63d3b473849e72556c68a68c21f8297eadbd158be5a2c00c5c4827f3ad8e"
-  end
 
   depends_on GraalVMRequirement => :build
   depends_on "gradle" => :build
