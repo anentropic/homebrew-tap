@@ -7,6 +7,12 @@ class Chuckd < Formula
 
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/anentropic/chuckd/releases/download/0.4.1"
+
+    sha256 cellar: :any, catalina: "dbed63d3b473849e72556c68a68c21f8297eadbd158be5a2c00c5c4827f3ad8e"
+  end
+
   depends_on GraalVMRequirement => :build
   depends_on "gradle" => :build
   depends_on xcode: :build
