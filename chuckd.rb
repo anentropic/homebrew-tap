@@ -11,6 +11,7 @@ class Chuckd < Formula
     root_url "https://github.com/anentropic/chuckd/releases/download/0.5.2"
 
     sha256 cellar: :any, catalina: "f1501b3e0e785279c86169d8c323d35f1c1005d86785dc952b3ab3ee132cd160"
+    sha256 cellar: :any, Monterey: "008173d3756e9d0edfdfc06dd6f54e371f2599aa69982ad436e6f81f7bb03c52"
   end
 
   depends_on GraalVMRequirement => :build
