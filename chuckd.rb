@@ -3,7 +3,7 @@ require_relative "./require/graalvm"
 class Chuckd < Formula
   desc "Schema evolutions validator"
   homepage "https://github.com/anentropic/chuckd"
-  url "https://github.com/anentropic/chuckd.git", tag: "0.5.3", revision: "bba7500d5c328fe0c2e0b4e368dcebdd3f27efb3"
+  url "https://github.com/anentropic/chuckd.git", tag: "0.5.3", revision: "61cff525443b2829e614ca216376f8ed8d10f4f1"
 
   license "Apache-2.0"
 
