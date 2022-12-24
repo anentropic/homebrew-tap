@@ -11,7 +11,7 @@ class Chuckd < Formula
   def install
     system "gradle", "--no-daemon", "-Dorg.gradle.java.home=#{HOMEBREW_PREFIX}/opt/openjdk/", "build"
 
-    system "unzip", "app/build/distributions/app-shadow-#{version}.zip"
+    system "unzip", "app/build/distributions/app-shadow-#{version "0.5.3"}.zip"
     libexec.install Dir["app-shadow-#{version}/lib/*"]
     write_non_overridable_jar_script bin, libexec/"chuckd-#{version}-all.jar", "chuckd"
 
