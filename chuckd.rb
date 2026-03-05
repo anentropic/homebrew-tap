@@ -1,7 +1,7 @@
 class Chuckd < Formula
   desc "Schema evolutions validation tool, for JSON Schema, Protobuf and Avro"
   homepage "https://github.com/anentropic/chuckd/"
-  url "https://github.com/anentropic/chuckd.git", tag: "0.5.3", revision: "684020c3a0b2d34350c5c81f5b3e46174eb0b381"
+  url "https://github.com/anentropic/chuckd.git", tag: "0.5.4", revision: "cdaac6365b89cdf1fbbfb3a0450814f031b75922"
   license "Apache-2.0"
 
   depends_on "gradle" => :build
